@@ -5,6 +5,8 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(express.json());
+
 app.get('/api', (_req, res) => {
   res.send('Hello API!');
 });
