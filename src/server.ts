@@ -5,6 +5,10 @@ import express from 'express';
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.get('/api', (_req, res) => {
+  res.send('Hello API!');
+});
+
 app.use('/storybook', express.static('dist/storybook'));
 
 app.use(express.static('dist/app'));
