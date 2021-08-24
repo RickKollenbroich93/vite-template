@@ -3,11 +3,11 @@ dotenv.config();
 import express from 'express';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
-app.get('/', (_req, res) => {
-  res.send('Hello there i´m your server');
-});
+app.use('/storybook', express.static('dist/storybook'));
+
+app.use(express.static('dist/app'));
 app.listen(port, () => {
   console.log(`Your server listening on port: ${port}!`);
 });
